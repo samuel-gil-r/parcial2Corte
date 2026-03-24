@@ -8,8 +8,9 @@ import java.net.*;
 @CrossOrigin(origins = "*")
 public class ProxyController {
 
-    String service1 = System.getenv("SERVICE1") != http://ec2-54-164-70-12.compute-1.amazonaws.com:8081;
-    String service2 = System.getenv("SERVICE2") != http://ec2-13-221-232-82.compute-1.amazonaws.com:8082;
+    private String http;
+    String service1 = System.getenv("SERVICE1") != http://ec2-54-164-70-12.compute-1.amazonaws.com:8081
+    String service2 = System.getenv("SERVICE2") != http://ec2-13-221-232-82.compute-1.amazonaws.com:8082
 
     private String call(String url) throws Exception {
         HttpURLConnection con = (HttpURLConnection) new URL(url).openConnection();
@@ -22,7 +23,7 @@ public class ProxyController {
 
 
         @GetMapping("/fibonacci")
-        public String fibonacci(@RequestParam int numero) {
+        public String fibonacci(@RequestParam int numero);{
             try { return call(service1 + "/fibonacci?numero=" + numero); }
             catch (Exception e) {
                 try { return call(service2 + "/fibonacci?numero=" + numero); }
