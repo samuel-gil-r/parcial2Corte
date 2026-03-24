@@ -19,5 +19,15 @@ public class ProxyController {
         while ((line = in.readLine()) != null) sb.append(line);
         in.close();
         return sb.toString();
+
+
+        @GetMapping("/fibonacci")
+        public String fibonacci(@RequestParam int numero) {
+            try { return call(service1 + "/fibonacci?numero=" + numero); }
+            catch (Exception e) {
+                try { return call(service2 + "/fibonacci?numero=" + numero); }
+                catch (Exception ex) { return "Servicios caídos"; }
+            }
+        }
     }
 }
