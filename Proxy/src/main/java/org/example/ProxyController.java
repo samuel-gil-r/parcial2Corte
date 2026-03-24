@@ -1,4 +1,4 @@
-package com.example.proxy;
+package org.example;
 
 import org.springframework.web.bind.annotation.*;
 import java.io.*;
